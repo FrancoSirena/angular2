@@ -9,6 +9,8 @@ import { Crib } from './../crib';
 export class CribCardComponent implements OnInit {
   @Input('crib') crib: Crib;
 
+  showDetails: boolean;
+
   constructor() { }
 
   ngOnInit() {

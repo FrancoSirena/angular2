@@ -5,24 +5,24 @@
             <div class="panel-body">
                 <div class="col-sm-4">
                     <label for="sort-field">Sort By</label>
-                    <select name="sort-field" id="sort-field" class="form-control"
+                    <md-select name="sort-field" id="sort-field" 
                         [(ngModel)]="sortField">
-                        <option *ngFor="let field of sortFields" [value]="field">
+                        <md-option *ngFor="let field of sortFields" [value]="field">
                             {{utilService.capitalize(field)}}
-                        </option>
+                        </md-option>
 
-                    </select>
+                    </md-select>
                 </div>
                 <div class="col-sm-4">
                     <label for="sort-direction">Sort Direction</label>
                     <div>
-                        <button class="btn btn-primary"
-                            [ngClass]="{'btn-success': sortDirection === 'asc'}"
+                        <button md-button color="accent"
+                            [ngClass]="{'clicked': sortDirection === 'asc'}"
                             (click)="sortDirection='asc'">
                             ASC
                         </button>
-                        <button class="btn btn-primary"
-                            [ngClass]="{'btn-success': sortDirection === 'desc'}"
+                        <button md-button color="accent"
+                            [ngClass]="{'clicked': sortDirection === 'desc'}"
                             (click)="sortDirection='desc'">
                             DESC
                         </button>
@@ -31,6 +31,10 @@
             </div>
         </div>
     </div>
+    <ng-container *ngFor="let crib of cribs | sortBy: [sortField, sortDirection]; let i = index">
+        <app-crib-card  [crib]="crib" class="col-sm-3"> </app-crib-card>
+        <div class="clearfix" *ngIf="i > 0 && i % 3 === 0"> </div>
+    </ng-container>
 </div>
-<app-crib-card *ngFor="let crib of cribs | sortBy: [sortField, sortDirection]" [crib]="crib" class="col-sm-3"> </app-crib-card>
+
 

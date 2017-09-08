@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-form-field, .mat-select {
+    width: 100%;
+}
+
+.clicked {
+    font-weight: 600;
+}
+
+.mat-card {
+    margin-bottom:10px;
+}

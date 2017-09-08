@@ -1,21 +1,11 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <a href="" class="navbar-brand">ng2-cribs</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav navbar-nav">
-                <li routerLinkActive="active">
-                    <a routerLink="/listing" class="navbar-link">Home</a>
-                </li>
-                <li routerLinkActive="active">
-                    <a routerLink="/other-component" class="navbar-link">Other</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<nav md-tab-nav-bar backgroundColor="primary">
+    <a md-tab-link routerLinkActive="active"  routerLink="/listing">Home</a>
+    <a md-tab-link routerLinkActive="active"  routerLink="/other-component">Other</a>    
 </nav>
 
-<div class="container">
+<div class="main-content container">
     <router-outlet> </router-outlet>   
 </div>
+
 
 

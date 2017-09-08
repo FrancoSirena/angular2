@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 export class AddListingFormComponent implements OnInit {
 
   @ViewChild('newCribForm') newCribForm: NgForm;
-  propertyTypes: Array<string> = ['House', 'Condo', 'Condo'];
+  propertyTypes: Array<string> = ['House', 'Condo', 'Duplex'];
   constructor(private cribsService: CribsService) { }
 
   ngOnInit() {
